@@ -1,1 +1,5 @@
+one off:
 -add automated version of manual seller/buyer
+
+recurent:
+-check for TODO coment: "//TODO"
