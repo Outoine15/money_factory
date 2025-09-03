@@ -1,11 +1,18 @@
 fn setup(mod_info){
+    // items:
     import "money_factory/scripts/money" as Money;
 
-    // import "money_factory/scripts/manual_seller" as manualBuyer;
-    // import "money_facotry/scripts/manual_buyer" as manualSeller;
- 
+    // manual blocs:
+    import "money_factory/scripts/smolGeneralStore" as smolGeneralStore;
+
+    // automatic blocs:
+    import "money_factory/scripts/automatic_selling_point" as autoSellPoint;
+
+    
+    // items:
     Money::define(mod_info);
 
-    // manualBuyer::define(mod_info);
-    // manualSeller::define(mod_info);
+    // blocs:
+    smolGeneralStore::define(mod_info);
+    autoSellPoint::define(mod_info)
 }
