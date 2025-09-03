@@ -1,0 +1,8 @@
+identifier="CoinsFactory:Outoine15"
+name="Coins Factory"
+description="Adds a selling station to transform most valuable items into Coins™ and a buying station to spend them."
+authors=["Outoine15"]
+dependencies=["VoxelEras:DestinyHailstorm"]
+entry="money_factory/entry.rhai"
+version="0.0.1"
+sync=true
