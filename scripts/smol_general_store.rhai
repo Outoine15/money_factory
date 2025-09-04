@@ -11,17 +11,17 @@ fn define(mod_info) {
 	));
 
     // see if i remove/replace the sound at some point
-	mod_info.add(SoundBuilder(
-		"WorkbenchInteract:VoxelEras",
-		"Workbench Movement",
-		"voxel_eras/assets/sounds/WorkbenchMotion.mp3"
-	));
+	// mod_info.add(SoundBuilder(
+	// 	"WorkbenchInteract:VoxelEras",
+	// 	"Workbench Movement",
+	// 	"voxel_eras/assets/sounds/WorkbenchMotion.mp3"
+	// ));
 
-	mod_info.add(SoundBuilder(
-		"WorkbenchCraft:VoxelEras",
-		"Workbench Hit",
-		"voxel_eras/assets/sounds/WorkbenchHit.mp3"
-	));
+	// mod_info.add(SoundBuilder(
+	// 	"WorkbenchCraft:VoxelEras",
+	// 	"Workbench Hit",
+	// 	"voxel_eras/assets/sounds/WorkbenchHit.mp3"
+	// ));
 
 
 	mod_info.add(
@@ -130,14 +130,14 @@ fn on_break(voxel, location, target, entity, game_state) {
 fn on_interact(voxel, location, entity, game_state) {
 	entity.start_interacting(location);
 
-	audio::spawn_oneshot_3d(
-		"WorkbenchInteract:VoxelEras",
-		"Player:VoxelEras",
-		Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
-		game_state,
-		1.,
-		10.
-	);
+	// audio::spawn_oneshot_3d(
+	// 	"WorkbenchInteract:VoxelEras",
+	// 	"Player:VoxelEras",
+	// 	Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
+	// 	game_state,
+	// 	1.,
+	// 	10.
+	// );
 
 	event::ACCEPT
 }
@@ -197,14 +197,14 @@ fn on_action(voxel, location, player, type, message, game_state) {
 		game_state
 	);
 
-	audio::spawn_oneshot_3d(
-		"WorkbenchCraft:VoxelEras",
-		"Player:VoxelEras",
-		Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
-		game_state,
-		1.,
-		15.
-	);
+	// audio::spawn_oneshot_3d(
+	// 	"WorkbenchCraft:VoxelEras",
+	// 	"Player:VoxelEras",
+	// 	Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
+	// 	game_state,
+	// 	1.,
+	// 	15.
+	// );
 
 	()
 } 
