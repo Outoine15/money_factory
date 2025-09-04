@@ -33,7 +33,7 @@ fn define(mod_info) {
             "money_factory/assets/default.png", //top
             "money_factory/assets/default.png", //sides
             "money_factory/assets/default.png") //botom
-		).pipette("smolGeneralStore:VoxelEras")
+		).pipette("smolGeneralStore:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
 		.does_break()
@@ -130,14 +130,14 @@ fn on_break(voxel, location, target, entity, game_state) {
 fn on_interact(voxel, location, entity, game_state) {
 	entity.start_interacting(location);
 
-	// audio::spawn_oneshot_3d(
-	// 	"WorkbenchInteract:VoxelEras",
-	// 	"Player:VoxelEras",
-	// 	Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
-	// 	game_state,
-	// 	1.,
-	// 	10.
-	// );
+	audio::spawn_oneshot_3d(
+		"WorkbenchInteract:VoxelEras",
+		"Player:VoxelEras",
+		Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
+		game_state,
+		1.,
+		10.
+	);
 
 	event::ACCEPT
 }
@@ -157,7 +157,7 @@ fn on_interacting(voxel, location, entity, egui, client_state) {
 			utils::instant_crafter_ui(
 				location,
 				ui,
-				"smolGeneralStore:VoxelEras",
+				"smolGeneralStore:MoneyFactory",
 				entity,
 				client_state
 			);
@@ -192,19 +192,19 @@ fn on_action(voxel, location, player, type, message, game_state) {
 
 	utils::instant_crafter_action(
 		message,
-		"smolGeneralStore:VoxelEras",
+		"smolGeneralStore:MoneyFactory",
 		entity,
 		game_state
 	);
 
-	// audio::spawn_oneshot_3d(
-	// 	"WorkbenchCraft:VoxelEras",
-	// 	"Player:VoxelEras",
-	// 	Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
-	// 	game_state,
-	// 	1.,
-	// 	15.
-	// );
+	audio::spawn_oneshot_3d(
+		"WorkbenchCraft:VoxelEras",
+		"Player:VoxelEras",
+		Vec3(location.x.to_float() + 0.5, location.y.to_float() + 0.5, location.z.to_float() + 0.5),
+		game_state,
+		1.,
+		15.
+	);
 
 	()
 } 
