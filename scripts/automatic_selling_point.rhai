@@ -136,8 +136,8 @@ fn on_insert(voxel, location, slot, stack, direction, game_state) {
 	if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
 	// slot == 0 is a crafting choice option ?
 		event::ACCEPT
-    } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
-        event::ACCEPT
+    // } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
+        // event::ACCEPT
 	} else {
 		event::CANCEL
 	}
@@ -158,19 +158,20 @@ fn on_tick(voxel, location, game_state) {
 	let progress = metadata.get_u64("State:Progress");
 	let inventory = metadata.get_inventory();
 	
-	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0], inventory[1]], [inventory[2]]);
+	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0]], [inventory[1]]); //INFO: in the first list put intput in the second outputs
 
 	// if energy == 0 {
-		if recipe != () {
-			if progress > 0 {
-				progress -= 1;
-				metadata.set_u64("State:Progress", progress);
-			} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
-				return event::ACCEPT;
-			}
-		} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
-			return event::ACCEPT;
-		}
+		// if recipe != () {
+		// 	if progress > 0 {
+		// 		progress -= 1;
+		// 		metadata.set_u64("State:Progress", progress);
+		// 	} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
+		// 		return event::ACCEPT;
+		// 	}
+		// } else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
+		// 	return event::ACCEPT;
+		// }
+		// INFFO: temporary removed (it was removing progress without doing anything->because not using energy)
 	// }
 
 	// if energy > 0 {
@@ -186,16 +187,16 @@ fn on_tick(voxel, location, game_state) {
 			if progress >= global::REQUIRED_PROGRESS {
 				if inventory[0].item == recipe.inputs[0].item {
 					inventory[0].quantity -= recipe.inputs[0].quantity;
-					inventory[1].quantity -= recipe.inputs[1].quantity;
-				} else {
-					inventory[1].quantity -= recipe.inputs[0].quantity;
-					inventory[0].quantity -= recipe.inputs[1].quantity;
+					// inventory[1].quantity -= recipe.inputs[1].quantity;
+				// } else {
+				// 	inventory[1].quantity -= recipe.inputs[0].quantity;
+				// 	inventory[0].quantity -= recipe.inputs[1].quantity; //was for double input slots
 				}
 
-				if inventory[2] == () {
-					inventory[2] = recipe.outputs[0];
+				if inventory[1] == () {
+					inventory[1] = recipe.outputs[0];
 				} else {
-					inventory[2].quantity += recipe.outputs[0].quantity;
+					inventory[1].quantity += recipe.outputs[0].quantity;
 				}
 
 				metadata.set_inventory(inventory);
