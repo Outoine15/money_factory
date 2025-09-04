@@ -330,29 +330,29 @@ private fn autoSellPoint_interactables(ui, location, voxel, entity, client_state
         client_state.action(location, "Transfer", metadata);
     }
 
+	// INFO: used for double input crafts
+    // let slot_interact = client_state.inventory_slot(
+    //     ui,
+    //     inventory[1],
+    //     if selected_slot != () {
+    //         selected_slot.inventory_index == 1 && selected_slot.slot_index == 1
+    //     } else {
+    //         false
+    //     },
+    //     "MoneyOutputIcon:MoneyFactory",
+    //     "Put any stufs you don't need in this slot to get paid.\nCan be input into from any side."
+    // );
 
-    let slot_interact = client_state.inventory_slot(
-        ui,
-        inventory[1],
-        if selected_slot != () {
-            selected_slot.inventory_index == 1 && selected_slot.slot_index == 1
-        } else {
-            false
-        },
-        "MoneyOutputIcon:MoneyFactory",
-        "Put any stufs you don't need in this slot to get paid.\nCan be input into from any side."
-    );
-
-    if slot_interact.clicked() || slot_interact.secondary_clicked() {
-        let metadata = MetaData();
-        metadata.set_slot_ref("State:ClickedSlot", metadata::SlotRef(
-            1,
-            1,
-            slot_interact.clicked(),
-			slot_interact.shifting()
-        ));
-        client_state.action(location, "Transfer", metadata);
-    }
+    // if slot_interact.clicked() || slot_interact.secondary_clicked() {
+    //     let metadata = MetaData();
+    //     metadata.set_slot_ref("State:ClickedSlot", metadata::SlotRef(
+    //         1,
+    //         1,
+    //         slot_interact.clicked(),
+	// 		slot_interact.shifting()
+    //     ));
+    //     client_state.action(location, "Transfer", metadata);
+    // }
 
 
     client_state.draw_icon(
@@ -364,9 +364,9 @@ private fn autoSellPoint_interactables(ui, location, voxel, entity, client_state
 
     let slot_interact = client_state.inventory_slot(
         ui,
-        inventory[2],
+        inventory[1],
         if selected_slot != () {
-            selected_slot.inventory_index == 1 && selected_slot.slot_index == 2
+            selected_slot.inventory_index == 1 && selected_slot.slot_index == 1
         } else {
             false
         },
@@ -377,7 +377,7 @@ private fn autoSellPoint_interactables(ui, location, voxel, entity, client_state
         let metadata = MetaData();
         metadata.set_slot_ref("State:ClickedSlot", metadata::SlotRef(
             1,
-            2,
+            1,
             slot_interact.clicked_down(),
 			slot_interact.shifting()
         ));
