@@ -10,19 +10,18 @@ fn define(mod_info) {
         "default:MoneyFactory",
         "money_factory/assets/default.png",
     ));
-		//TODO: done down to here the rest to do
 	mod_info.add(
 		VoxelBuilder(
-			"manualBuyerOff:MoneyFactory",
-			"manual Buyer (Off)",
-			"alloy_dusts/scripts/mixer.rhai"
+			"autoSellPointOff:MoneyFactory",
+			"automatic selling point (Off)",
+			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-			"voxel_eras/assets/textures/AlloyFurnaceTop.png",
-			"alloy_dusts/assets/MixerSide.png",
-			"voxel_eras/assets/textures/AlloyFurnaceBottom.png"
+			"money_factory/assets/default.png", //top
+			"money_factory/assets/default.png", //sides
+			"money_factory/assets/default.png"  //bottom
 		))
-		.pipette("Mixer:AlloyDusts")
+		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
 		.does_break()
@@ -37,16 +36,16 @@ fn define(mod_info) {
 
 	mod_info.add(
 		VoxelBuilder(
-			"MixerOn:AlloyDusts",
-			"Mixer (On)",
-			"alloy_dusts/scripts/mixer.rhai"
+			"autoSellPointOn:MoneyFactory",
+			"automatic selling point (On)",
+			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-			"voxel_eras/assets/textures/AlloyFurnaceTop.png",
-			"alloy_dusts/assets/MixerOnAnim.png",
-			"voxel_eras/assets/textures/AlloyFurnaceBottom.png"
+			"money_factory/assets/default.png", //top
+			"money_factory/assets/default.png", //sides
+			"money_factory/assets/default.png"  //bottom
 		))
-		.pipette("Mixer:AlloyDusts")
+		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
 		.does_break()
@@ -61,21 +60,21 @@ fn define(mod_info) {
 
 	mod_info.add(
 		ConstructBuilder(
-			"Mixer:AlloyDusts",
-			"Mixer",
-			"Mix and Match! Use the power of clockwork to automatically mix dusts together.",
+			"autoSellPoint:MoneyFactory",
+			"automatic selling point",
+			"automaticaly sell any items put inside",
 			"Machines",
-			"MixerIcon:AlloyDusts",
+			"autoSellPointIcon:MoneyFactory",
 			construct::ROT_NONE
-		).cost(WeakItemStack("ClockworkCore:VoxelEras", 1))
-		.cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
-		.cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
-        .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
+		).cost(WeakItemStack("Dirt:VoxelEras", 1))
+		// .cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
+		// .cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
+        // .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
 		.variant(
 			ConstructVariantBuilder(voxel::ROT_UP)
 				.place(
 					0, 0, 0,
-					WeakVoxelVariant("MixerOff:AlloyDusts", voxel::ROT_UP)
+					WeakVoxelVariant("autoSellPointOff:MoneyFactory", voxel::ROT_UP)
 					.add_state("State:Inventory", metadata::Inventory(3))
 					.add_state("State:ClockworkEnergy", metadata::U64(0))
 					.add_state("State:Progress", metadata::U64(0))
@@ -85,26 +84,26 @@ fn define(mod_info) {
 	
 	mod_info.add(
 		RecipeBuilder(
-			"CarbonSteelDustMixer:AlloyDusts",
-			"Mix Coal Dust and Iron Dust into Carbon Steel Dust",
+			"DirtSell:MoneyFactory",
+			"Sell Dirt for Money",
 			0,
-			"SteelDustIcon:AlloyDusts"
-		).crafted_in("Mixer:AlloyDusts")
-        .with_input(WeakItemStack("IronDust:AlloyDusts", 2))
-		.with_input(WeakItemStack("CoalDust:VoxelEras", 4))
-		.with_output(WeakItemStack("SteelDust:AlloyDusts", 2))
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Dirt:VoxelEras", 1))
+		// .with_input(WeakItemStack("CoalDust:VoxelEras", 4))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
 	);
-	mod_info.add(
-		RecipeBuilder(
-			"BronzeDustMixer:AlloyDusts",
-			"Mix Copper Dust and Tin Dust into Bronze Dust",
-			0,
-			"SteelDustIcon:AlloyDusts"
-		).crafted_in("Mixer:AlloyDusts")
-        .with_input(WeakItemStack("CopperDust:AlloyDusts", 3))
-		.with_input(WeakItemStack("TinDust:AlloyDusts", 1))
-		.with_output(WeakItemStack("BronzeDust:AlloyDusts", 4))
-	);
+	// mod_info.add(
+	// 	RecipeBuilder(
+	// 		"BronzeDustMixer:AlloyDusts",
+	// 		"Mix Copper Dust and Tin Dust into Bronze Dust",
+	// 		0,
+	// 		"SteelDustIcon:AlloyDusts"
+	// 	).crafted_in("Mixer:AlloyDusts")
+    //     .with_input(WeakItemStack("CopperDust:AlloyDusts", 3))
+	// 	.with_input(WeakItemStack("TinDust:AlloyDusts", 1))
+	// 	.with_output(WeakItemStack("BronzeDust:AlloyDusts", 4))
+	// );
 }
 
 fn on_break(voxel, location, target, entity, game_state) {
@@ -118,10 +117,10 @@ fn on_break(voxel, location, target, entity, game_state) {
 			game_state.drop(slot, location);
 		}
 		
-		game_state.drop(WeakItemStack("ClockworkCore:VoxelEras", 1), location);
-		game_state.drop(WeakItemStack("CarbonSteelGear:VoxelEras", 2), location);
-		game_state.drop(WeakItemStack("CarbonSteelTube:VoxelEras", 3), location);
-        game_state.drop(WeakItemStack("CarbonSteelPlate:VoxelEras", 4), location);
+		game_state.drop(WeakItemStack("Dirt:VoxelEras", 1), location);
+		// game_state.drop(WeakItemStack("CarbonSteelGear:VoxelEras", 2), location);
+		// game_state.drop(WeakItemStack("CarbonSteelTube:VoxelEras", 3), location);
+        // game_state.drop(WeakItemStack("CarbonSteelPlate:VoxelEras", 4), location);
 	}
 
 	event::ACCEPT
@@ -134,9 +133,10 @@ fn on_interact(voxel, location, entity, game_state) {
 }
 
 fn on_insert(voxel, location, slot, stack, direction, game_state) {
-	if slot == 0 && (stack.item.identifier == "IronDust:AlloyDusts" || stack.item.identifier == "CopperDust:AlloyDusts") {
+	if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
+	// slot == 0 is a crafting choice option ?
 		event::ACCEPT
-    } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") {
+    } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
         event::ACCEPT
 	} else {
 		event::CANCEL
@@ -154,31 +154,31 @@ fn on_extract(voxel, location, slot, items, direction, game_state) {
 fn on_tick(voxel, location, game_state) {
 	let metadata = voxel.metadata;
 
-	let energy = metadata.get_u64("State:ClockworkEnergy");
+	// let energy = metadata.get_u64("State:ClockworkEnergy");
 	let progress = metadata.get_u64("State:Progress");
 	let inventory = metadata.get_inventory();
 	
-	let recipe = game_state.find_possible_recipe("Mixer:AlloyDusts", [inventory[0], inventory[1]], [inventory[2]]);
+	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0], inventory[1]], [inventory[2]]);
 
-	if energy == 0 {
+	// if energy == 0 {
 		if recipe != () {
 			if progress > 0 {
 				progress -= 1;
 				metadata.set_u64("State:Progress", progress);
-			} else if voxel.prefab.identifier == "MixerOff:AlloyDusts" {
+			} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
 				return event::ACCEPT;
 			}
-		} else if voxel.prefab.identifier == "MixerOff:AlloyDusts" {
+		} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
 			return event::ACCEPT;
 		}
-	}
+	// }
 
-	if energy > 0 {
+	// if energy > 0 {
 		let was_running = false;
 		if recipe != () {
 			was_running = true;
-			energy -= 1;
-			metadata.set_u64("State:ClockworkEnergy", energy);
+			// energy -= 1;
+			// metadata.set_u64("State:ClockworkEnergy", energy);
 
 			progress += 1;
 
@@ -210,17 +210,17 @@ fn on_tick(voxel, location, game_state) {
 		game_state.set_voxel(location,
 			game_state.get_voxel_prefab(
 				if was_running { 
-					"MixerOn:AlloyDusts"
+					"autoSellPointOn:MoneyFactory"
 				} else {
-					"MixerOff:AlloyDusts"
+					"autoSellPointOff:MoneyFactory"
 				})
 				.get_variant(metadata));
-	} else {
-		game_state.set_voxel(location, 
-			game_state
-				.get_voxel_prefab("MixerOff:AlloyDusts")
-				.get_variant(metadata));
-	}
+	// } else {
+		// game_state.set_voxel(location, 
+			// game_state
+				// .get_voxel_prefab("MixerOff:AlloyDusts")
+				// .get_variant(metadata));
+	// }
 
 	event::ACCEPT
 }
@@ -228,16 +228,16 @@ fn on_tick(voxel, location, game_state) {
 fn on_interacting(voxel, location, entity, egui, client_state) {
 	let game_state = client_state.game_state;
 	egui.window(
-		"MixerInteracting",
+		"autoSellPointInteracting",
 		|ui| {
 			client_state.heading(
 				ui,
-				"MixerIcon:AlloyDusts",
-				"Mixer",
-				"Give yourself a well earned break from manually mixing your dusts! Pipes can insert and extract from all directions."
+				"autoSellPointIcon:MoneyFactory",
+				"automatic selling point",
+				"just sell all that trash cloging up your inventory! Pipes can insert and extract from all directions."
 			);
 
-			mixer_ui(ui, location, voxel, entity, client_state);
+			autoSellPoint_ui(ui, location, voxel, entity, client_state);//previously "mixer_ui"
 
 			player::inventory_ui(
 				ui,
@@ -264,7 +264,7 @@ fn on_interacting(voxel, location, entity, egui, client_state) {
 
 	event::ACCEPT
 }
-
+// this machine does not use energy so is this function usfull?
 fn on_message(voxel, location, type, message, game_state) {
 	if type != "CLOCKWORK" { return event::CANCEL; }
 	let energy = message;
@@ -285,17 +285,17 @@ fn on_message(voxel, location, type, message, game_state) {
 	event::ACCEPT
 }
 
-private fn mixer_ui(ui, location, voxel, entity, client_state) {
+private fn autoSellPoint_ui(ui, location, voxel, entity, client_state) {
 	ui.vertical_centered_justified(|ui| {
 		ui.set_width(200.);
 
 		ui.horizontal(|ui| {
-			mixer_interactables(ui, location, voxel, entity, client_state);
+			autoSellPoint_interactables(ui, location, voxel, entity, client_state);
 		});
 	});
 }
 
-private fn mixer_interactables(ui, location, voxel, entity, client_state) {
+private fn autoSellPoint_interactables(ui, location, voxel, entity, client_state) {
 	const FIRE_FRAMES = 8;
 	const COOK_FRAMES = 15;
 
@@ -314,8 +314,8 @@ private fn mixer_interactables(ui, location, voxel, entity, client_state) {
         } else {
             false
         },
-        "DustOutputIcon:VoxelEras",
-        "Insert either Iron Dust or Copper Dust into this slot.\nCan be input into from any side."
+        "moneyOutputIcon:MoneyFactory",
+        "Put any stufs you don't need in this slot to get paid.\nCan be input into from any side."
     );
 
     if slot_interact.clicked() || slot_interact.secondary_clicked() {
@@ -338,8 +338,8 @@ private fn mixer_interactables(ui, location, voxel, entity, client_state) {
         } else {
             false
         },
-        "DustOutputIcon:VoxelEras",
-        "Insert either Iron Dust or Copper Dust into this slot.\nCan be input into from any side."
+        "MoneyOutputIcon:MoneyFactory",
+        "Put any stufs you don't need in this slot to get paid.\nCan be input into from any side."
     );
 
     if slot_interact.clicked() || slot_interact.secondary_clicked() {
@@ -369,8 +369,8 @@ private fn mixer_interactables(ui, location, voxel, entity, client_state) {
         } else {
             false
         },
-        "DustOutputIcon:VoxelEras",
-        "The output of the Mixer.\nCan be taken from all sides."
+        "moneyOutputIcon:MoneyFactory",
+        "The output of the Automatic Selling Point.\nCan be taken from all sides."
     );
     if slot_interact.clicked_down() || slot_interact.secondary_clicked() {
         let metadata = MetaData();

@@ -11,12 +11,14 @@ fn define(mod_info){
         "MoneyIcon:MoneyFactory"
     ));
 
-    // mod_info.add(
-        // RecipeBuilder(
-            // "manualBuyer:MoneyFactory",
-            // "Sell resources for Money",
-            // 0, //TODO check what theses do 
-            // "MoneyIcon:MoneyFactory"
-        // ).crafted_in()
-    // )
+    mod_info.add(
+        RecipeBuilder(
+            "autoSellPoint:MoneyFactory",
+            "Sell dirt for Money",
+            0, //TODO check what theses do 
+            "MoneyIcon:MoneyFactory"
+        ).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Dirt:VoxelEras",1)) //temporary (for testing)
+        .with_output(WeakItemStack("Money:MoneyFactory",1))
+    );
 }

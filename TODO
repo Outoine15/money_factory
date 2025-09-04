@@ -1,8 +1,10 @@
 one off:
--chose if I start by automated buyer/seller and make a manual market with all reciepies (2 tabs?=>I sell/I buy)
- or some sort of general store for buying stufs and dedicated
--add automated version of manual seller/buyer
--finish manual_buyer (replace from template)
+-make auto version of smol general store (the big general store ?)
+-check code of furnace/miner for output/process
+-autosellpoint not need clockwork power (energy) but has progress
+-do a icons.rhai scrit to load all icons -> moneyOutputIcon,
 
 recurent:
 -check for TODO coment: "//TODO"
+pastable:
+//TODO: finished here rest down to go
