@@ -1,8 +1,8 @@
-identifier="CoinsFactory:Outoine15"
-name="Coins Factory"
+identifier="MoneyFactory:Outoine15"
+name="Money Factory"
 description="Adds a selling station to transform the most valuable items into Money and a buying station to spend it."
 authors=["Outoine15"]
 dependencies=["VoxelEras:DestinyHailstorm"]
 entry="money_factory/entry.rhai"
-version="0.0.1"
+version="0.0.2"
 sync=true

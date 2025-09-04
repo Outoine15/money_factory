@@ -9,16 +9,16 @@ Money Factory is a mod for the game [Voxel Era](https://store.steampowered.com/a
 
 last stable version: none
 
-curent mod version: 0.0.1\
+curent mod version: 0.0.1
 current VE game version: 1.2.2
 
-\
+
 compatibility of the money factory mod with Voxel Era's version:
+
 | VE version | mod version |
-| ---------- | ----------- |
-|   1.2.2    |    0.0.1    |
-|            |             |
+| :--------: | :---------: |
+|   1.2.2   |    0.0.1    |
+|   1.2.2   |    0.0.2    |
 
-
-> [!NOTE] 
+> [!NOTE]
 > I am doing this mod as a learning experience so I might take some time to keep up with the updates
