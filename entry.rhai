@@ -3,7 +3,7 @@ fn setup(mod_info){
     import "money_factory/scripts/money" as Money;
 
     // manual blocs:
-    import "money_factory/scripts/smolGeneralStore" as smolGeneralStore;
+    // import "money_factory/scripts/smolGeneralStore" as smolGeneralStore;
 
     // automatic blocs:
     import "money_factory/scripts/automatic_selling_point" as autoSellPoint;
@@ -13,6 +13,6 @@ fn setup(mod_info){
     Money::define(mod_info);
 
     // blocs:
-    smolGeneralStore::define(mod_info);
+    // smolGeneralStore::define(mod_info);
     autoSellPoint::define(mod_info)
 }
