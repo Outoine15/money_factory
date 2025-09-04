@@ -3,7 +3,7 @@ fn setup(mod_info){
     import "money_factory/scripts/money" as Money;
 
     // manual blocs:
-    import "money_factory/scripts/smolGeneralStore" as smolGeneralStore;
+    import "money_factory/scripts/smol_general_store" as smolGeneralStore;
 
     // automatic blocs:
     import "money_factory/scripts/automatic_selling_point" as autoSellPoint;
