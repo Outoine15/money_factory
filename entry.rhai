@@ -1,4 +1,7 @@
 fn setup(mod_info){
+    // icons:
+    import "money_factory/scripts/icons" as icons;
+    
     // items:
     import "money_factory/scripts/money" as Money;
 
