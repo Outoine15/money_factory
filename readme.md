@@ -5,7 +5,7 @@ Money Factory is a mod for the game [Voxel Era](https://store.steampowered.com/a
 ---
 
 > [!NOTE]
-> to add the mod to your game, copy the folder "money_factory" inside the main money_factory repository" `<!-- or download the realese [here]() -->`
+> to add the mod to your game, copy the folder "money_factory" inside the main money_factory repository" <!-- or download the realese [here]() -->
 
 ---
 
