@@ -174,12 +174,12 @@ fn define(mod_info) {
 	);
 	mod_info.add(
 		RecipeBuilder(
-			"WroughtIornIngotSell:MoneyFactory",
-			"Sell WroughtIornIngot for Money",
+			"WroughtIronIngotSell:MoneyFactory",
+			"Sell WroughtIronIngot for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("WroughtIornIngot:VoxelEras", 1))
+        .with_input(WeakItemStack("WroughtIronIngot:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 2))
 	);
 	mod_info.add(
