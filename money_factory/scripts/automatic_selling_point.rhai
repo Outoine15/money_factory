@@ -174,12 +174,12 @@ fn define(mod_info) {
 	);
 	mod_info.add(
 		RecipeBuilder(
-			"WroughtIronIngotSell:MoneyFactory",
-			"Sell WroughtIronIngot for Money",
+			"PigIronIngotSell:MoneyFactory",
+			"Sell PigIronIngot for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("WroughtIronIngot:VoxelEras", 1))
+        .with_input(WeakItemStack("PigIronIngot:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 2))
 	);
 	mod_info.add(
@@ -214,12 +214,12 @@ fn define(mod_info) {
 	);
 	mod_info.add(
 		RecipeBuilder(
-			"PigIronIngotSell:MoneyFactory",
-			"Sell PigIronIngot for Money",
+			"WroughtIronIngotSell:MoneyFactory",
+			"Sell WroughtIronIngot for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("PigIronIngot:VoxelEras", 1))
+        .with_input(WeakItemStack("WroughtIronIngot:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 3))
 	);
 	mod_info.add(
