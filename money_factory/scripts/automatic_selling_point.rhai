@@ -204,16 +204,6 @@ fn define(mod_info) {
 	);
 	mod_info.add(
 		RecipeBuilder(
-			"OakPlanksSell:MoneyFactory",
-			"Sell OakPlanks for Money",
-			0,
-			"MoneyIcon:MoneyFactory"
-		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("OakPlanks:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 2))
-	);
-	mod_info.add(
-		RecipeBuilder(
 			"CharcoalDustSell:MoneyFactory",
 			"Sell CharcoalDust for Money",
 			0,
