@@ -3,9 +3,12 @@ Money Factory is a mod for the game [Voxel Era](https://store.steampowered.com/a
 "Now you don't need to care about having every type of ores from the begining, you can just trade what you have for them."
 
 ---
+> [!NOTE]
+> to add the mod to your game, copy the folder "money_factory" inside the main money_factory folder" <!-- or download the realese [here]() -->
 
+---
 > [!IMPORTANT]
-> status: Not Working
+> status (working on): adding items to the trading list
 
 last stable version: none
 
