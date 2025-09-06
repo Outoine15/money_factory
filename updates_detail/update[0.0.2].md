@@ -1,4 +1,4 @@
 # new content
-- automatic selling point (machin)
-- money (item)
 
+- automatic selling point (machine)
+- money (item)
