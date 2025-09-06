@@ -90,20 +90,58 @@ fn define(mod_info) {
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
         .with_input(WeakItemStack("Dirt:VoxelEras", 1))
-		// .with_input(WeakItemStack("CoalDust:VoxelEras", 4))
 		.with_output(WeakItemStack("Money:MoneyFactory", 1))
 	);
-	// mod_info.add(
-	// 	RecipeBuilder(
-	// 		"BronzeDustMixer:AlloyDusts",
-	// 		"Mix Copper Dust and Tin Dust into Bronze Dust",
-	// 		0,
-	// 		"SteelDustIcon:AlloyDusts"
-	// 	).crafted_in("Mixer:AlloyDusts")
-    //     .with_input(WeakItemStack("CopperDust:AlloyDusts", 3))
-	// 	.with_input(WeakItemStack("TinDust:AlloyDusts", 1))
-	// 	.with_output(WeakItemStack("BronzeDust:AlloyDusts", 4))
-	// );
+	mod_info.add(
+		RecipeBuilder(
+			"CoalSell:MoneyFactory",
+			"Sell Coal for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Coal:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"IronOreSell:MoneyFactory",
+			"Sell IronOre for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("IronOre:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"TinOreSell:MoneyFactory",
+			"Sell TinOre for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("TinOre:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CopperOreSell:MoneyFactory",
+			"Sell CopperOre for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CopperOre:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CopperIngotSell:MoneyFactory",
+			"Sell CopperIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CopperIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
 }
 
 fn on_break(voxel, location, target, entity, game_state) {
@@ -133,14 +171,15 @@ fn on_interact(voxel, location, entity, game_state) {
 }
 
 fn on_insert(voxel, location, slot, stack, direction, game_state) {
-	if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
+// ne check pas ce que je met vu que je vais tout pouvoir vendre
+	// if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
 	// slot == 0 is a crafting choice option ?
 		event::ACCEPT
     // } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
         // event::ACCEPT
-	} else {
-		event::CANCEL
-	}
+	// } else {
+		// event::CANCEL
+	// }
 }
 
 fn on_extract(voxel, location, slot, items, direction, game_state) {
