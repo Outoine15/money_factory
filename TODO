@@ -1,10 +1,8 @@
 one off:
 -find a meaning for the achronym S.M.O.L
--make a template for each RecipeBuilder() for autocomplete with .csv data
--study the value of each items/make a .csv (or other) with all the items in the game and give them value (money equivalent) -> use that to make a script for auto filling the code with all the reciepies.
+-make a version of the script for the S.M.O.L general store
 -make auto version of smol general store (the big general store ?)
 -check how to use icons inside slots and not the default -> autosellpoint
--icons on a different scale than the rest (16x16 pixels)?
 
 recurent:
 -do a full cleanup of files
