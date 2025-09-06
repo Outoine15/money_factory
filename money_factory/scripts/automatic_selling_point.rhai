@@ -224,12 +224,12 @@ fn define(mod_info) {
 	);
 	mod_info.add(
 		RecipeBuilder(
-			"CarbonSteelINgotSell:MoneyFactory",
-			"Sell CarbonSteelINgot for Money",
+			"CarbonSteelIngotSell:MoneyFactory",
+			"Sell CarbonSteelIngot for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("CarbonSteelINgot:VoxelEras", 1))
+        .with_input(WeakItemStack("CarbonSteelIngot:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 3))
 	);
 
