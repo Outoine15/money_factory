@@ -81,7 +81,17 @@ fn define(mod_info) {
 				)
 		).priority(9)
 	);
-	
+
+	mod_info.add(
+		RecipeBuilder(
+			"OakLogSell:MoneyFactory",
+			"Sell OakLog for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("OakLog:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
 	mod_info.add(
 		RecipeBuilder(
 			"DirtSell:MoneyFactory",
@@ -142,6 +152,97 @@ fn define(mod_info) {
         .with_input(WeakItemStack("CopperIngot:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 2))
 	);
+	mod_info.add(
+		RecipeBuilder(
+			"TinIngotSell:MoneyFactory",
+			"Sell TinIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("TinIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"BronzeIngotSell:MoneyFactory",
+			"Sell BronzeIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("BronzeIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"WroughtIornIngotSell:MoneyFactory",
+			"Sell WroughtIornIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("WroughtIornIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CoalDustSell:MoneyFactory",
+			"Sell CoalDust for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CoalDust:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CharcoalSell:MoneyFactory",
+			"Sell Charcoal for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Charcoal:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"OakPlanksSell:MoneyFactory",
+			"Sell OakPlanks for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("OakPlanks:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CharcoalDustSell:MoneyFactory",
+			"Sell CharcoalDust for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CharcoalDust:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 3))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"PigIronIngotSell:MoneyFactory",
+			"Sell PigIronIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("PigIronIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 3))
+	);
+	mod_info.add(
+		RecipeBuilder(
+			"CarbonSteelINgotSell:MoneyFactory",
+			"Sell CarbonSteelINgot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CarbonSteelINgot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 3))
+	);
+
 }
 
 fn on_break(voxel, location, target, entity, game_state) {
