@@ -1,17 +1,6 @@
 	mod_info.add(
 		RecipeBuilder(
 	"smolGeneralStore:MoneyFactory",
-			"buy Coal",
-			2,
-			"CoalIcon:VoxelEras"
-		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 1))
-		.with_output(WeakItemStack("Coal:VoxelEras", 1))
-	);
-
-	mod_info.add(
-		RecipeBuilder(
-	"smolGeneralStore:MoneyFactory",
 			"buy IronOre",
 			3,
 			"IronOreIcon:VoxelEras"

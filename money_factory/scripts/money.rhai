@@ -189,14 +189,25 @@ fn define(mod_info){
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
 		.with_output(WeakItemStack("OakLog:VoxelEras", 1))
 	);
+	// mod_info.add(
+	// 	RecipeBuilder(
+	// "smolGeneralStore:MoneyFactory",
+	// 		"buy Dirt",
+	// 		1,
+	// 		"DirtIcon:VoxelEras"
+	// 	).crafted_in("smolGeneralStore:MoneyFactory")
+	// 	.with_input(WeakItemStack("Money:MoneyFactory", 1))
+	// 	.with_output(WeakItemStack("Dirt:VoxelEras", 1))
+	// );
 	mod_info.add(
 		RecipeBuilder(
 	"smolGeneralStore:MoneyFactory",
-			"buy Dirt",
+			"buy Coal",
 			1,
-			"DirtIcon:VoxelEras"
+			"CoalIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
-		.with_output(WeakItemStack("Dirt:VoxelEras", 1))
+		.with_output(WeakItemStack("Coal:VoxelEras", 1))
 	);
+
 }

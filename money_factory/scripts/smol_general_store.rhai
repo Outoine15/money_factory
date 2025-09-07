@@ -64,7 +64,7 @@ fn define(mod_info) {
 
 fn on_break(voxel, location, target, entity, game_state) {
 	if location == target {
-		game_state.drop(WeakItemStack("Dirt:VoxelEras", 1), location);//TODO: change cost acording to chaned build cost of final build
+		game_state.drop(WeakItemStack("Dirt:VoxelEras", 1), location);//TODO: change cost acording to changed build cost of final build
 	}
 
 	event::ACCEPT
