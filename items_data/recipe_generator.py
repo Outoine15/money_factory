@@ -33,7 +33,7 @@ def template_fill_sell_point(item,itemvalue):
     return template
 
 def template_fill_store(item,itemvalue,tradenumber):
-	template='	mod_info.add(\n		RecipeBuilder(\n	"smolGeneralStore:MoneyFactory",\n			"buy '+item+'",\n			'+str(tradenumber)+',\n			"'+item+'Icon:VoxelEras"\n		).crafted_in("smolGeneralStore:MoneyFactory")\n		.with_input(WeakItemStack("Money:MoneyFactory", '+str(itemvalue)+'))\n		.with_output(WeakItemStack("'+item+':VoxelEras", 1))\n	);\n'
+	template='	mod_info.add(\n		RecipeBuilder(\n	"smolGeneralStore'+item+':MoneyFactory",\n			"buy '+item+'",\n			'+str(tradenumber)+',\n			"'+item+'Icon:VoxelEras"\n		).crafted_in("smolGeneralStore:MoneyFactory")\n		.with_input(WeakItemStack("Money:MoneyFactory", '+str(itemvalue)+'))\n		.with_output(WeakItemStack("'+item+':VoxelEras", 1))\n	);\n'
 	return template
 total_sell_point_info=""
 total_store_info=""
