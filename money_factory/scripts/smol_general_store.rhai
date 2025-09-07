@@ -61,16 +61,16 @@ fn define(mod_info) {
 		.priority(0)
 	);
 
-	mod_info.add(
-		RecipeBuilder(
-			"smolGeneralStore:MoneyFactory", //recepie name:mod/source ?
-			"buy oak planks", 
-			0, //position of the recepie on the grid?
-			"OakPlankIcon:VoxelEras"
-		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 2))
-		.with_output(WeakItemStack("OakPlank:VoxelEras", 1))
-	);
+	// mod_info.add(
+	// 	RecipeBuilder(
+	// 		"smolGeneralStore:MoneyFactory", //recepie name:mod/source ?
+	// 		"buy oak planks", 
+	// 		0, //position of the recepie on the grid?
+	// 		"OakPlankIcon:VoxelEras"
+	// 	).crafted_in("smolGeneralStore:MoneyFactory")
+	// 	.with_input(WeakItemStack("Money:MoneyFactory", 2))
+	// 	.with_output(WeakItemStack("OakPlank:VoxelEras", 1))
+	// );
 
     //other craft items:
 	// mod_info.add(
