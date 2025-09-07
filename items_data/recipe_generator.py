@@ -32,18 +32,20 @@ def template_fill_sell_point(item,itemvalue):
     template='	mod_info.add(\n		RecipeBuilder(\n			"'+item+'Sell:MoneyFactory",\n			"Sell '+item+' for Money",\n			0,\n			"MoneyIcon:MoneyFactory"\n		).crafted_in("autoSellPoint:MoneyFactory")\n        .with_input(WeakItemStack("'+item+':VoxelEras", 1))\n		.with_output(WeakItemStack("Money:MoneyFactory", '+str(itemvalue)+'))\n	);\n'
     return template
 
-def template_fill_store(item,itemvalue):
-	template='	mod_info.add(\n		RecipeBuilder(\n	"smolGeneralStore:MoneyFactory",\n			"buy '+item+'",\n			0,\n			"'+item+'Icon:VoxelEras"\n		).crafted_in("smolGeneralStore:MoneyFactory")\n		.with_input(WeakItemStack("Money:MoneyFactory", '+str(itemvalue)+'))\n		.with_output(WeakItemStack("'+item+':VoxelEras", 1))\n	);\n'
+def template_fill_store(item,itemvalue,tradenumber):
+	template='	mod_info.add(\n		RecipeBuilder(\n	"smolGeneralStore:MoneyFactory",\n			"buy '+item+'",\n			'+str(tradenumber)+',\n			"'+item+'Icon:VoxelEras"\n		).crafted_in("smolGeneralStore:MoneyFactory")\n		.with_input(WeakItemStack("Money:MoneyFactory", '+str(itemvalue)+'))\n		.with_output(WeakItemStack("'+item+':VoxelEras", 1))\n	);\n'
 	return template
 
 with open("items_data.csv","r") as csv_items_data:
 	items_data=csv.reader(csv_items_data)
+	tradenumber=0
 	for row in items_data:
 		item=row[0]
 		itemvalue=row[1]
 		sell_point_info=template_fill_sell_point(item,itemvalue)
-		store_info=template_fill_store(item,itemvalue)
+		store_info=template_fill_store(item,itemvalue,tradenumber)
 		print(sell_point_info)
 		print(store_info)
+		tradenumber+=1
 
 
