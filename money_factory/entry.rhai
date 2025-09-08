@@ -17,7 +17,7 @@ fn setup(mod_info){
 
     // icons/textures:
     icons::define(mod_info);
-    textures::define(mod_info)
+    textures::define(mod_info);
 
     // trades:
     trades::define(mod_info);
