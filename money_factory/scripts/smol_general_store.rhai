@@ -5,11 +5,6 @@ import "voxel_eras/scripts/player" as player;
 import "voxel_eras/scripts/utils" as utils;
 
 fn define(mod_info) {
-	mod_info.add(TextureBuilder(
-		"smolGeneralStoreIcon:MoneyFactory",
-		"money_factory/assets/default.png"
-	));
-
     // see if i remove/replace the sound at some point
 	// mod_info.add(SoundBuilder(
 	// 	"WorkbenchInteract:VoxelEras",

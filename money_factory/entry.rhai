@@ -1,7 +1,11 @@
 fn setup(mod_info){
-    // icons:
+    // icons/textures:
     import "money_factory/scripts/icons" as icons;
-    
+    import "money_factory/scripts/textures" as textures;
+
+    // trades:
+    import "money_factory/scripts/trades" as trades;
+
     // items:
     import "money_factory/scripts/money" as Money;
 
@@ -11,7 +15,13 @@ fn setup(mod_info){
     // automatic blocs:
     import "money_factory/scripts/automatic_selling_point" as autoSellPoint;
 
-    
+    // icons/textures:
+    icons::define(mod_info);
+    textures::define(mod_info)
+
+    // trades:
+    trades::define(mod_info);
+
     // items:
     Money::define(mod_info);
 

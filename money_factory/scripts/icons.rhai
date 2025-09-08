@@ -3,4 +3,5 @@ fn define(mod_info){
         "moneyOutputIcon:MoneyFactory",
         "money_factory/assets/MoneyIcon/MoneyOutputIcon.png"
     ));
+
 }
