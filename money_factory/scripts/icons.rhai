@@ -3,5 +3,8 @@ fn define(mod_info){
         "moneyOutputIcon:MoneyFactory",
         "money_factory/assets/MoneyIcon/MoneyOutputIcon.png"
     ));
-
+    mod_info.add(TextureBuilder(
+        "autoSellPointIcon:MoneyFactory",
+        "money_factory/assets/textures/autoSellPointOff.png"
+    ));
 }

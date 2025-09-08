@@ -25,9 +25,9 @@ fn define(mod_info) {
 			"S.M.O.L General Store",
 			"money_factory/scripts/smol_general_store.rhai"
 		).model(SolidVoxelModel(
-            "money_factory/assets/default.png", //top
-            "money_factory/assets/default.png", //sides
-            "money_factory/assets/default.png") //botom
+            "money_factory/assets/textures/smol_general_storeTop.png", //top
+            "money_factory/assets/textures/smol_general_store.png", //sides
+            "money_factory/assets/textures/smol_general_storeTop.png") //botom
 		).pipette("smolGeneralStore:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")

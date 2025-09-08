@@ -17,10 +17,10 @@ fn define(mod_info) {
 			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-			"money_factory/assets/default.png", //top
-			"money_factory/assets/default.png", //sides
-			"money_factory/assets/default.png"  //bottom
-		))
+            "voxel_eras/assets/textures/AlloyFurnaceTop.png", //top
+            "money_factory/assets/textures/autoSellPointOff.png", //sides
+            "voxel_eras/assets/textures/AlloyFurnaceBottom.png") //botom
+		)
 		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
@@ -41,10 +41,10 @@ fn define(mod_info) {
 			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-			"money_factory/assets/default.png", //top
-			"money_factory/assets/default.png", //sides
-			"money_factory/assets/default.png"  //bottom
-		))
+            "voxel_eras/assets/textures/AlloyFurnaceTop.png", //top
+            "money_factory/assets/textures/autoSellPointOnAnim.png", //sides
+            "voxel_eras/assets/textures/AlloyFurnaceBottom.png") //botom
+		)
 		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
