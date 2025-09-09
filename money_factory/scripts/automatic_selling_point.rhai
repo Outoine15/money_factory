@@ -67,7 +67,7 @@ fn define(mod_info) {
 			"autoSellPointIcon:MoneyFactory",
 			construct::ROT_NONE
 		)
-		.cost(WeakItemStack("ClockworkCore:VOxelEras",1))
+		.cost(WeakItemStack("ClockworkCore:VoxelEras",1))
 		.cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
 		.cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
         .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
