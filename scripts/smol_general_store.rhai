@@ -5,20 +5,6 @@ import "voxel_eras/scripts/player" as player;
 import "voxel_eras/scripts/utils" as utils;
 
 fn define(mod_info) {
-    // see if i remove/replace the sound at some point
-	// mod_info.add(SoundBuilder(
-	// 	"WorkbenchInteract:VoxelEras",
-	// 	"Workbench Movement",
-	// 	"voxel_eras/assets/sounds/WorkbenchMotion.mp3"
-	// ));
-
-	// mod_info.add(SoundBuilder(
-	// 	"WorkbenchCraft:VoxelEras",
-	// 	"Workbench Hit",
-	// 	"voxel_eras/assets/sounds/WorkbenchHit.mp3"
-	// ));
-
-
 	mod_info.add(
 		VoxelBuilder(
 			"smolGeneralStore:MoneyFactory",

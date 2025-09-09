@@ -111,15 +111,7 @@ fn on_interact(voxel, location, entity, game_state) {
 }
 
 fn on_insert(voxel, location, slot, stack, direction, game_state) {
-// ne check pas ce que je met vu que je vais tout pouvoir vendre
-	// if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
-	// slot == 0 is a crafting choice option ?
-		event::ACCEPT
-    // } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
-        // event::ACCEPT
-	// } else {
-		// event::CANCEL
-	// }
+	event::ACCEPT
 }
 
 fn on_extract(voxel, location, slot, items, direction, game_state) {
@@ -133,54 +125,31 @@ fn on_extract(voxel, location, slot, items, direction, game_state) {
 fn on_tick(voxel, location, game_state) {
 	let metadata = voxel.metadata;
 
-	// let energy = metadata.get_u64("State:ClockworkEnergy");
 	let progress = metadata.get_u64("State:Progress");
 	let inventory = metadata.get_inventory();
 	
 	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0]], [inventory[1]]); //INFO: in the first list put intput in the second outputs
 
-	// if energy == 0 {
-		// if recipe != () {
-		// 	if progress > 0 {
-		// 		progress -= 1;
-		// 		metadata.set_u64("State:Progress", progress);
-		// 	} else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
-		// 		return event::ACCEPT;
-		// 	}
-		// } else if voxel.prefab.identifier == "autoSellPointOff:MoneyFactory" {
-		// 	return event::ACCEPT;
-		// }
-		// INFFO: temporary removed (it was removing progress without doing anything->because not using energy)
-	// }
+	let was_running = false;
+	if recipe != () {
+		was_running = true;
 
-	// if energy > 0 {
-		let was_running = false;
-		if recipe != () {
-			was_running = true;
-			// energy -= 1;
-			// metadata.set_u64("State:ClockworkEnergy", energy);
+		progress += 1;
 
-			progress += 1;
-
-			// Craft
-			if progress >= global::REQUIRED_PROGRESS {
-				if inventory[0].item == recipe.inputs[0].item {
-					inventory[0].quantity -= recipe.inputs[0].quantity;
-					// inventory[1].quantity -= recipe.inputs[1].quantity;
-				// } else {
-				// 	inventory[1].quantity -= recipe.inputs[0].quantity;
-				// 	inventory[0].quantity -= recipe.inputs[1].quantity; //was for double input slots
-				}
-
-				if inventory[1] == () {
-					inventory[1] = recipe.outputs[0];
-				} else {
-					inventory[1].quantity += recipe.outputs[0].quantity;
-				}
-
-				metadata.set_inventory(inventory);
-				progress = 0;
+		if progress >= global::REQUIRED_PROGRESS {
+			if inventory[0].item == recipe.inputs[0].item {
+				inventory[0].quantity -= recipe.inputs[0].quantity;
 			}
+
+			if inventory[1] == () {
+				inventory[1] = recipe.outputs[0];
+			} else {
+				inventory[1].quantity += recipe.outputs[0].quantity;
+			}
+
+			metadata.set_inventory(inventory);
+			progress = 0;
+		}
 		} else if progress > 0 {
 			progress -= 1;
 		}
@@ -195,13 +164,6 @@ fn on_tick(voxel, location, game_state) {
 					"autoSellPointOff:MoneyFactory"
 				})
 				.get_variant(metadata));
-	// } else {
-		// game_state.set_voxel(location, 
-			// game_state
-				// .get_voxel_prefab("MixerOff:AlloyDusts")
-				// .get_variant(metadata));
-	// }
-
 	event::ACCEPT
 }
 
@@ -217,7 +179,7 @@ fn on_interacting(voxel, location, entity, egui, client_state) {
 				"just sell all that trash cloging up your inventory! Pipes can insert and extract from all directions."
 			);
 
-			autoSellPoint_ui(ui, location, voxel, entity, client_state);//previously "mixer_ui"
+			autoSellPoint_ui(ui, location, voxel, entity, client_state);
 
 			player::inventory_ui(
 				ui,
@@ -244,7 +206,7 @@ fn on_interacting(voxel, location, entity, egui, client_state) {
 
 	event::ACCEPT
 }
-// this machine does not use energy so is this function usfull?
+
 fn on_message(voxel, location, type, message, game_state) {
 	if type != "CLOCKWORK" { return event::CANCEL; }
 	let energy = message;
@@ -308,31 +270,6 @@ private fn autoSellPoint_interactables(ui, location, voxel, entity, client_state
         ));
         client_state.action(location, "Transfer", metadata);
     }
-
-	// INFO: used for double input crafts
-    // let slot_interact = client_state.inventory_slot(
-    //     ui,
-    //     inventory[1],
-    //     if selected_slot != () {
-    //         selected_slot.inventory_index == 1 && selected_slot.slot_index == 1
-    //     } else {
-    //         false
-    //     },
-    //     "MoneyOutputIcon:MoneyFactory",
-    //     "Put any stufs you don't need in this slot to get paid.\nCan be input into from any side."
-    // );
-
-    // if slot_interact.clicked() || slot_interact.secondary_clicked() {
-    //     let metadata = MetaData();
-    //     metadata.set_slot_ref("State:ClickedSlot", metadata::SlotRef(
-    //         1,
-    //         1,
-    //         slot_interact.clicked(),
-	// 		slot_interact.shifting()
-    //     ));
-    //     client_state.action(location, "Transfer", metadata);
-    // }
-
 
     client_state.draw_icon(
         ui,
