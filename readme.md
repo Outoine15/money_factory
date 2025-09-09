@@ -5,16 +5,16 @@ Money Factory is a mod for the game [Voxel Era](https://store.steampowered.com/a
 ---
 
 > [!NOTE]
-> to add the mod to your game, copy the folder "money_factory" inside the main money_factory repository" <!-- or download the realese [here]() -->
+> to add the mod to your game, copy the folder "money_factory" inside the main money_factory repository" or download from the release branch [here](https://github.com/Outoine15/money_factory/tree/realese).
 
 ---
 
 > [!IMPORTANT]
-> status (working on): adding items to the trading list
+> status (working on): debuging stack max value
 
 last stable version: none
 
-curent mod version: 0.0.1
+curent mod version: 1.0.3
 current VE game version: 1.2.2
 
 compatibility of the money factory mod with Voxel Era's version:
@@ -24,6 +24,7 @@ compatibility of the money factory mod with Voxel Era's version:
 |   1.2.2   |    0.0.1    |
 |   1.2.2   |    0.0.2    |
 |   1.2.2   |    0.0.3    |
+|   1.2.2   |    1.0.3    |
 
 > [!NOTE]
 > I am doing this mod as a learning experience so I might take some time to keep up with the updates

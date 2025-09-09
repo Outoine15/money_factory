@@ -4,5 +4,5 @@ description="Adds a selling station to transform the most valuable items into Mo
 authors=["Outoine15"]
 dependencies=["VoxelEras:DestinyHailstorm"]
 entry="money_factory/entry.rhai"
-version="0.0.3"
+version="1.0.4"
 sync=true
