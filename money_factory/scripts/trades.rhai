@@ -1,13 +1,24 @@
 fn define(mod_info){
-    mod_info.add(
+	mod_info.add(
 		RecipeBuilder(
-			"OakLogSell:MoneyFactory",
-			"Sell OakLog for Money",
+			"OakPlankSell:MoneyFactory",
+			"Sell OakPlank for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("OakLog:VoxelEras", 1))
+        .with_input(WeakItemStack("OakPlank:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"WoodenGearSell:MoneyFactory",
+			"Sell WoodenGear for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("WoodenGear:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 2))
 	);
 
 	mod_info.add(
@@ -18,6 +29,17 @@ fn define(mod_info){
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
         .with_input(WeakItemStack("Dirt:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"StoneSell:MoneyFactory",
+			"Sell Stone for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Stone:VoxelEras", 1))
 		.with_output(WeakItemStack("Money:MoneyFactory", 1))
 	);
 
@@ -89,17 +111,6 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
-			"BronzeIngotSell:MoneyFactory",
-			"Sell BronzeIngot for Money",
-			0,
-			"MoneyIcon:MoneyFactory"
-		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("BronzeIngot:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 2))
-	);
-
-	mod_info.add(
-		RecipeBuilder(
 			"PigIronIngotSell:MoneyFactory",
 			"Sell PigIronIngot for Money",
 			0,
@@ -155,33 +166,154 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
+			"WroughtIronPlateSell:MoneyFactory",
+			"Sell WroughtIronPlate for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("WroughtIronPlate:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 6))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"BronzeIngotSell:MoneyFactory",
+			"Sell BronzeIngot for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("BronzeIngot:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 9))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"BronzePlateSell:MoneyFactory",
+			"Sell BronzePlate for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("BronzePlate:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 18))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"SmallBronzeGearSell:MoneyFactory",
+			"Sell SmallBronzeGear for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("SmallBronzeGear:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 27))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
 			"CarbonSteelIngotSell:MoneyFactory",
 			"Sell CarbonSteelIngot for Money",
 			0,
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
         .with_input(WeakItemStack("CarbonSteelIngot:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 3))
+		.with_output(WeakItemStack("Money:MoneyFactory", 18))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"CarbonSteelTubeSell:MoneyFactory",
+			"Sell CarbonSteelTube for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CarbonSteelTube:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 36))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"ClockworkCoreSell:MoneyFactory",
+			"Sell ClockworkCore for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("ClockworkCore:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 33))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"CarbonSteelPlateSell:MoneyFactory",
+			"Sell CarbonSteelPlate for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CarbonSteelPlate:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 36))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"CarbonSteelGearSell:MoneyFactory",
+			"Sell CarbonSteelGear for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("CarbonSteelGear:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 72))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"WrenchSell:MoneyFactory",
+			"Sell Wrench for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Wrench:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 177))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+			"SawbladeSell:MoneyFactory",
+			"Sell Sawblade for Money",
+			0,
+			"MoneyIcon:MoneyFactory"
+		).crafted_in("autoSellPoint:MoneyFactory")
+        .with_input(WeakItemStack("Sawblade:VoxelEras", 1))
+		.with_output(WeakItemStack("Money:MoneyFactory", 108))
 	);
 
 
 //separate
 	mod_info.add(
 		RecipeBuilder(
-	"smolGeneralStoreOakLog:MoneyFactory",
-			"buy OakLog",
+	"smolGeneralStoreOakPlank:MoneyFactory",
+			"buy OakPlank",
 			0,
-			"OakLogIcon:VoxelEras"
+			"OakPlankIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
-		.with_output(WeakItemStack("OakLog:VoxelEras", 1))
+		.with_output(WeakItemStack("OakPlank:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreWoodenGear:MoneyFactory",
+			"buy WoodenGear",
+			1,
+			"WoodenGearIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 2))
+		.with_output(WeakItemStack("WoodenGear:VoxelEras", 1))
 	);
 
 	mod_info.add(
 		RecipeBuilder(
 	"smolGeneralStoreDirt:MoneyFactory",
 			"buy Dirt",
-			1,
+			2,
 			"DirtIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
@@ -190,9 +322,20 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
+	"smolGeneralStoreStone:MoneyFactory",
+			"buy Stone",
+			3,
+			"StoneIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 1))
+		.with_output(WeakItemStack("Stone:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
 	"smolGeneralStoreCoal:MoneyFactory",
 			"buy Coal",
-			2,
+			4,
 			"CoalIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
@@ -203,7 +346,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreIronOre:MoneyFactory",
 			"buy IronOre",
-			3,
+			5,
 			"IronOreIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
@@ -214,7 +357,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreTinOre:MoneyFactory",
 			"buy TinOre",
-			4,
+			6,
 			"TinOreIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
@@ -225,7 +368,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreCopperOre:MoneyFactory",
 			"buy CopperOre",
-			5,
+			7,
 			"CopperOreIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 1))
@@ -236,7 +379,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreCopperIngot:MoneyFactory",
 			"buy CopperIngot",
-			6,
+			8,
 			"CopperIngotIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 2))
@@ -247,7 +390,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreTinIngot:MoneyFactory",
 			"buy TinIngot",
-			7,
+			9,
 			"TinIngotIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 2))
@@ -256,20 +399,9 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
-	"smolGeneralStoreBronzeIngot:MoneyFactory",
-			"buy BronzeIngot",
-			8,
-			"BronzeIngotIcon:VoxelEras"
-		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 2))
-		.with_output(WeakItemStack("BronzeIngot:VoxelEras", 1))
-	);
-
-	mod_info.add(
-		RecipeBuilder(
 	"smolGeneralStorePigIronIngot:MoneyFactory",
 			"buy PigIronIngot",
-			9,
+			10,
 			"PigIronIngotIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 2))
@@ -280,7 +412,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreCoalDust:MoneyFactory",
 			"buy CoalDust",
-			10,
+			11,
 			"CoalDustIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 2))
@@ -291,7 +423,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreCharcoal:MoneyFactory",
 			"buy Charcoal",
-			11,
+			12,
 			"CharcoalIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 2))
@@ -302,7 +434,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreCharcoalDust:MoneyFactory",
 			"buy CharcoalDust",
-			12,
+			13,
 			"CharcoalDustIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 3))
@@ -313,7 +445,7 @@ fn define(mod_info){
 		RecipeBuilder(
 	"smolGeneralStoreWroughtIronIngot:MoneyFactory",
 			"buy WroughtIronIngot",
-			13,
+			14,
 			"WroughtIronIngotIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 3))
@@ -322,12 +454,122 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
+	"smolGeneralStoreWroughtIronPlate:MoneyFactory",
+			"buy WroughtIronPlate",
+			15,
+			"WroughtIronPlateIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 6))
+		.with_output(WeakItemStack("WroughtIronPlate:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreBronzeIngot:MoneyFactory",
+			"buy BronzeIngot",
+			16,
+			"BronzeIngotIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 9))
+		.with_output(WeakItemStack("BronzeIngot:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreBronzePlate:MoneyFactory",
+			"buy BronzePlate",
+			17,
+			"BronzePlateIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 18))
+		.with_output(WeakItemStack("BronzePlate:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreSmallBronzeGear:MoneyFactory",
+			"buy SmallBronzeGear",
+			18,
+			"SmallBronzeGearIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 27))
+		.with_output(WeakItemStack("SmallBronzeGear:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
 	"smolGeneralStoreCarbonSteelIngot:MoneyFactory",
 			"buy CarbonSteelIngot",
-			14,
+			19,
 			"CarbonSteelIngotIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 3))
+		.with_input(WeakItemStack("Money:MoneyFactory", 18))
 		.with_output(WeakItemStack("CarbonSteelIngot:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreCarbonSteelTube:MoneyFactory",
+			"buy CarbonSteelTube",
+			20,
+			"CarbonSteelTubeIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 36))
+		.with_output(WeakItemStack("CarbonSteelTube:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreClockworkCore:MoneyFactory",
+			"buy ClockworkCore",
+			21,
+			"ClockworkCoreIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 33))
+		.with_output(WeakItemStack("ClockworkCore:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreCarbonSteelPlate:MoneyFactory",
+			"buy CarbonSteelPlate",
+			22,
+			"CarbonSteelPlateIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 36))
+		.with_output(WeakItemStack("CarbonSteelPlate:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreCarbonSteelGear:MoneyFactory",
+			"buy CarbonSteelGear",
+			23,
+			"CarbonSteelGearIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 72))
+		.with_output(WeakItemStack("CarbonSteelGear:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreWrench:MoneyFactory",
+			"buy Wrench",
+			24,
+			"WrenchIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 177))
+		.with_output(WeakItemStack("Wrench:VoxelEras", 1))
+	);
+
+	mod_info.add(
+		RecipeBuilder(
+	"smolGeneralStoreSawblade:MoneyFactory",
+			"buy Sawblade",
+			25,
+			"SawbladeIcon:VoxelEras"
+		).crafted_in("smolGeneralStore:MoneyFactory")
+		.with_input(WeakItemStack("Money:MoneyFactory", 108))
+		.with_output(WeakItemStack("Sawblade:VoxelEras", 1))
 	);
 }

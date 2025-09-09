@@ -7,4 +7,8 @@ fn define(mod_info){
         "autoSellPointIcon:MoneyFactory",
         "money_factory/assets/textures/autoSellPointOff.png"
     ));
+    mod_info.add(TextureBuilder(
+        "smolGeneralStoreIcon:MoneyFactory",
+        "money_factory/assets/textures/smol_general_store.png"
+    ))
 }

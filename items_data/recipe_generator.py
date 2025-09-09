@@ -49,7 +49,8 @@ with open("items_data.csv","r") as csv_items_data:
 		total_store_info+=store_info+'\n'
 		tradenumber+=1
 
-
+print("fn define(mod_info){")
 print(total_sell_point_info)
 print("//separate")
 print(total_store_info)
+print("}")
