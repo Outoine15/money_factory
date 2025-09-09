@@ -24,7 +24,7 @@ compatibility of the money factory mod with Voxel Era's version:
 |   1.2.2   |    0.0.1    |
 |   1.2.2   |    0.0.2    |
 |   1.2.2   |    0.0.3    |
-|   1.2.2   |    1.0.3    |
+|   1.2.2   |    1.0.4    |
 
 > [!NOTE]
 > I am doing this mod as a learning experience so I might take some time to keep up with the updates
