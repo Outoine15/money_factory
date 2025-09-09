@@ -271,7 +271,7 @@ fn define(mod_info){
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
         .with_input(WeakItemStack("Wrench:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 177))
+		.with_output(WeakItemStack("Money:MoneyFactory", 128))
 	);
 
 	mod_info.add(
@@ -558,7 +558,7 @@ fn define(mod_info){
 			24,
 			"WrenchIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 177))
+		.with_input(WeakItemStack("Money:MoneyFactory", 128))
 		.with_output(WeakItemStack("Wrench:VoxelEras", 1))
 	);
 
