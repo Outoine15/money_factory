@@ -129,7 +129,7 @@ fn on_tick(voxel, location, game_state) {
 	let progress = metadata.get_u64("State:Progress");
 	let inventory = metadata.get_inventory();
 	
-	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0]], [inventory[1]]); //INFO: in the first list put intput in the second outputs
+	let recipe = game_state.find_possible_recipe("autoSellPoint:MoneyFactory", [inventory[0]], [inventory[1]]);
 
 	let was_running = false;
 	if recipe != () {

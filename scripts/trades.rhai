@@ -238,7 +238,7 @@ fn define(mod_info){
 			"MoneyIcon:MoneyFactory"
 		).crafted_in("autoSellPoint:MoneyFactory")
         .with_input(WeakItemStack("ClockworkCore:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 33))
+		.with_output(WeakItemStack("Money:MoneyFactory", 128))
 	);
 
 	mod_info.add(
