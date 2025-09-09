@@ -70,7 +70,7 @@ fn define(mod_info) {
 		.cost(WeakItemStack("ClockworkCore:VOxelEras",1))
 		.cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
 		.cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
-        .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4)))
+        .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
 		.variant(
 			ConstructVariantBuilder(voxel::ROT_UP)
 				.place(
