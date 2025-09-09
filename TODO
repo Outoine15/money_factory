@@ -6,3 +6,6 @@ one off:
 recurent:
 -do a full cleanup of files
 -check for TODO coment: "//TODO"
+
+bugs:
+-when breaking a money factory auto sell point (other money factory blocks?) and stoping right befor the end it the game is stuck in breaking annimation/textures and needs to exit reload the world
