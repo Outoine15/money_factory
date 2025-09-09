@@ -5,20 +5,6 @@ import "voxel_eras/scripts/player" as player;
 import "voxel_eras/scripts/utils" as utils;
 
 fn define(mod_info) {
-    // see if i remove/replace the sound at some point
-	// mod_info.add(SoundBuilder(
-	// 	"WorkbenchInteract:VoxelEras",
-	// 	"Workbench Movement",
-	// 	"voxel_eras/assets/sounds/WorkbenchMotion.mp3"
-	// ));
-
-	// mod_info.add(SoundBuilder(
-	// 	"WorkbenchCraft:VoxelEras",
-	// 	"Workbench Hit",
-	// 	"voxel_eras/assets/sounds/WorkbenchHit.mp3"
-	// ));
-
-
 	mod_info.add(
 		VoxelBuilder(
 			"smolGeneralStore:MoneyFactory",
@@ -52,14 +38,18 @@ fn define(mod_info) {
 					WeakVoxelVariant("smolGeneralStore:MoneyFactory", voxel::ROT_UP)
 				)
 		)
-		.cost(WeakItemStack("OakLog:VoxelEras", 4)) //TODO: change build cost on final build
+		.cost(WeakItemStack("ClockworkCore:VoxelEras",1))
+		.cost(WeakItemStack("CarbonSteelPlate:VoxelEras",5))
+		.cost(WeakItemStack("OakPlank:VoxelEras",1))
 		.priority(0)
 	);
 }
 
 fn on_break(voxel, location, target, entity, game_state) {
 	if location == target {
-		game_state.drop(WeakItemStack("Dirt:VoxelEras", 1), location);//TODO: change cost acording to changed build cost of final build
+		game_state.drop(WeakItemStack("ClockworkCore:VoxelEras",1),location);
+		game_state.drop(WeakItemStack("CarbonSteelPlate:VoxelEras",5),location);
+		game_state.drop(WeakItemStack("OakPlank:VoxelEras",1),location);
 	}
 
 	event::ACCEPT
