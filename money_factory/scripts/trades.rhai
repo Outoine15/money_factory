@@ -254,17 +254,6 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
-			"WrenchSell:MoneyFactory",
-			"Sell Wrench for Money",
-			0,
-			"MoneyIcon:MoneyFactory"
-		).crafted_in("autoSellPoint:MoneyFactory")
-        .with_input(WeakItemStack("Wrench:VoxelEras", 1))
-		.with_output(WeakItemStack("Money:MoneyFactory", 177))
-	);
-
-	mod_info.add(
-		RecipeBuilder(
 			"SawbladeSell:MoneyFactory",
 			"Sell Sawblade for Money",
 			0,
@@ -531,20 +520,9 @@ fn define(mod_info){
 
 	mod_info.add(
 		RecipeBuilder(
-	"smolGeneralStoreWrench:MoneyFactory",
-			"buy Wrench",
-			23,
-			"WrenchIcon:VoxelEras"
-		).crafted_in("smolGeneralStore:MoneyFactory")
-		.with_input(WeakItemStack("Money:MoneyFactory", 177))
-		.with_output(WeakItemStack("Wrench:VoxelEras", 1))
-	);
-
-	mod_info.add(
-		RecipeBuilder(
 	"smolGeneralStoreSawblade:MoneyFactory",
 			"buy Sawblade",
-			24,
+			23,
 			"SawbladeIcon:VoxelEras"
 		).crafted_in("smolGeneralStore:MoneyFactory")
 		.with_input(WeakItemStack("Money:MoneyFactory", 108))
