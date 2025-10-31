@@ -10,6 +10,14 @@ fn define(mod_info) {
         "default:MoneyFactory",
         "money_factory/assets/default.png",
     ));
+	mod_info.add(TextureBuilder(
+        "AutoSellPointOff:MoneyFactory",
+        "money_factory/assets/textures/autoSellPointOff.png",
+    ));
+	mod_info.add(TextureBuilder(
+		"AutoSellPointOnAnim:MoneyFactory",
+		"money_factory/assets/textures/autoSellPointOnAnim.png",
+	))
 	mod_info.add(
 		VoxelBuilder(
 			"autoSellPointOff:MoneyFactory",
@@ -17,9 +25,9 @@ fn define(mod_info) {
 			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-            "voxel_eras/assets/textures/AlloyFurnaceTop.png", //top
-            "money_factory/assets/textures/autoSellPointOff.png", //sides
-            "voxel_eras/assets/textures/AlloyFurnaceBottom.png") //botom
+            "AlloyFurnaceBlockTop:VoxelEras", //top
+            "AutoSellPointOff:MoneyFactory", //sides
+            "AlloyFurnaceBlockTop:VoxelEras") //botom
 		)
 		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
@@ -41,9 +49,9 @@ fn define(mod_info) {
 			"money_factory/scripts/automatic_selling_point.rhai"
 		).model(
 			SolidVoxelModel(
-            "voxel_eras/assets/textures/AlloyFurnaceTop.png", //top
-            "money_factory/assets/textures/autoSellPointOnAnim.png", //sides
-            "voxel_eras/assets/textures/AlloyFurnaceBottom.png") //botom
+            "AlloyFurnaceBlockTop:VoxelEras", //top
+            "AutoSellPointOnAnim:MoneyFactory", //sides
+            "AlloyFurnaceBlockTop:VoxelEras") //botom
 		)
 		.pipette("autoSellPoint:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
@@ -112,7 +120,7 @@ fn on_interact(voxel, location, entity, game_state) {
 }
 
 fn on_insert(voxel, location, slot, stack, direction, game_state) {
-// ne check pas ce que je met vu que je vais tout pouvoir vendre
+// not checking since i want to be able to put anything in to sell
 	// if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
 	// slot == 0 is a crafting choice option ?
 		event::ACCEPT
