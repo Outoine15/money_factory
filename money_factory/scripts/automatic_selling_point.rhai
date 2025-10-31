@@ -17,7 +17,7 @@ fn define(mod_info) {
 	mod_info.add(TextureBuilder(
 		"AutoSellPointOnAnim:MoneyFactory",
 		"money_factory/assets/textures/autoSellPointOnAnim.png",
-	))
+	));
 	mod_info.add(
 		VoxelBuilder(
 			"autoSellPointOff:MoneyFactory",
