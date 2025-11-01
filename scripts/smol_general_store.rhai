@@ -5,15 +5,23 @@ import "voxel_eras/scripts/player" as player;
 import "voxel_eras/scripts/utils" as utils;
 
 fn define(mod_info) {
+	mod_info.add(TextureBuilder(
+        "smolGeneralStoreTop:MoneyFactory",
+        "money_factory/assets/textures/smol_general_storeTop.png",
+    ));
+	mod_info.add(TextureBuilder(
+        "smolGeneralStoreSide:MoneyFactory",
+        "money_factory/assets/textures/smol_general_store.png",
+    ));
 	mod_info.add(
 		VoxelBuilder(
 			"smolGeneralStore:MoneyFactory",
 			"S.M.O.L General Store",
 			"money_factory/scripts/smol_general_store.rhai"
 		).model(SolidVoxelModel(
-            "money_factory/assets/textures/smol_general_storeTop.png", //top
-            "money_factory/assets/textures/smol_general_store.png", //sides
-            "money_factory/assets/textures/smol_general_storeTop.png") //botom
+            "smolGeneralStoreTop:MoneyFactory", //top
+            "smolGeneralStoreSide:MoneyFactory", //sides
+            "smolGeneralStoreTop:MoneyFactory") //botom
 		).pipette("smolGeneralStore:MoneyFactory")
 		.break_rate(voxel::BREAK_RATE_MACHINE)
 		.tag("Solid:VoxelEras")
