@@ -75,10 +75,11 @@ fn define(mod_info) {
 			"autoSellPointIcon:MoneyFactory",
 			construct::ROT_NONE
 		)
-		.cost(WeakItemStack("ClockworkCore:VoxelEras",1))
-		.cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
-		.cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
-        .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
+		.cost(WeakItemStack("Dirt:VoxelEras",1))
+		// .cost(WeakItemStack("ClockworkCore:VoxelEras",1))
+		// .cost(WeakItemStack("CarbonSteelTube:VoxelEras", 3))
+		// .cost(WeakItemStack("CarbonSteelGear:VoxelEras", 2))
+        // .cost(WeakItemStack("CarbonSteelPlate:VoxelEras", 4))
 		.variant(
 			ConstructVariantBuilder(voxel::ROT_UP)
 				.place(
@@ -104,7 +105,7 @@ fn on_break(voxel, location, target, entity, game_state) {
 			game_state.drop(slot, location);
 		}
 		
-		game_state.drop(WeakItemStack("ClockworkCore:VOxelEras",1),location);
+		game_state.drop(WeakItemStack("ClockworkCore:VoxelEras",1),location);
 		game_state.drop(WeakItemStack("CarbonSteelTube:VoxelEras", 3),location);
 		game_state.drop(WeakItemStack("CarbonSteelGear:VoxelEras", 2),location);
         game_state.drop(WeakItemStack("CarbonSteelPlate:VoxelEras", 4),location);
@@ -120,19 +121,15 @@ fn on_interact(voxel, location, entity, game_state) {
 }
 
 fn on_insert(voxel, location, slot, stack, direction, game_state) {
-// not checking since i want to be able to put anything in to sell
-	// if slot == 0 && (stack.item.identifier == "Dirt:VoxelEras"){// || stack.item.identifier == "CopperDust:AlloyDusts") { //for multiples reciepies add here as well
-	// slot == 0 is a crafting choice option ?
-		event::ACCEPT
-    // } else if slot == 1 && (stack.item.identifier == "CoalDust:VoxelEras" || stack.item.identifier == "TinDust:AlloyDusts") { //i leave it here as a show of what is suposed to be when testing //TODO: to remove afterward
-        // event::ACCEPT
-	// } else {
-		// event::CANCEL
-	// }
+    if slot == 0 {
+        event::ACCEPT
+    } else {
+        event::CANCEL
+    }
 }
 
 fn on_extract(voxel, location, slot, items, direction, game_state) {
-	if direction != () && slot != 2 {
+	if direction != () && slot != 1 {
 		return event::CANCEL;
 	}
 
