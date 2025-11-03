@@ -1,4 +1,4 @@
-Money Factory is a mod for the game [Voxel Era](https://store.steampowered.com/app/3192010/Voxel_Eras/) this mod is intended to add another way of progressing trought the recource crafting.
+Money Factory is a mod for the game [Voxel Eras](https://store.steampowered.com/app/3192010/Voxel_Eras/) this mod is intended to add another way of progressing trought the recource crafting.
 
 "Now you don't need to care about having every type of ores from the begining, you can just trade what you have for them."
 
